@@ -1,4 +1,4 @@
-module go-cache
+module github.com/go-zs/cache
 
 go 1.12
 
