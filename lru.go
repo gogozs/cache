@@ -20,13 +20,14 @@ type Store struct {
 	maxLength int
 }
 
-func NewList(num ...int) *Store {
+func NewStore(num ...int) *Store {
 	maxLength := 1000
 	if len(num) > 0 && num[0] > 0 {
 		maxLength = num[0]
 	}
 	return &Store{list.New(), sync.Map{}, maxLength}
 }
+
 
 func (cl *Store) GetCache(key string) (interface{}, bool) {
 	if value, ok := cl.m.Load(key); ok {

@@ -6,11 +6,11 @@ import (
 	"testing"
 )
 
-var cl = NewList()
+var cl = NewStore()
 
 
 func TestNewList(t *testing.T) {
-	c := NewList(100)
+	c := NewStore(100)
 	assert.Equal(t, 100, c.maxLength)
 	assert.Equal(t, 10, cl.maxLength)
 }
