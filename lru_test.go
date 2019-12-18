@@ -38,6 +38,16 @@ func TestStore_AddCache(t *testing.T) {
 	}
 }
 
+func TestStore_Add_Get(t *testing.T) {
+	cl.SetCache("abc", 15)
+	r, ok := cl.GetCache("abc")
+	assert.True(t, ok)
+	r2, ok := r.(int)
+	assert.True(t, ok)
+	assert.Equal(t, 15, r2)
+}
+
+
 func TestStore_RemoveCache(t *testing.T) {
 	cl.Clear()
 	for i := 0; i < 10; i++ {
