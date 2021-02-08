@@ -27,9 +27,9 @@ func (s *Store) GetCache(key string) (interface{}, bool) {
 		defer s.Unlock()
 		s.MoveFront(c)
 		return c.value, true
-	} else {
-		return nil, false
 	}
+
+	return nil, false
 }
 
 func (s *Store) SetCache(key string, value interface{}) bool {
